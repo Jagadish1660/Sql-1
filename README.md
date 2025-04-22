@@ -1,44 +1,76 @@
+# 🎓 Student Result Management System (SQL Project)
 
-# Student Result Managment System - SQL Project
+This is a simple and beginner-friendly **SQL project** to manage student results, courses, and marks using structured relational data. It is designed to help students and freshers learn how to use SQL for real-world database applications.
 
+## 📌 Project Objective
 
-## Installation
+The system manages:
+- Student information
+- Courses
+- Marks/Results
+- Retrieval of performance reports
 
-1. Install [XAMPP](https://www.apachefriends.org/download.html) or [WAMPP](https://www.wampserver.com/en/)
+Great for practicing **SQL joins, constraints, and aggregate functions**.
 
-2. Open XAMPP/WAMPP Control panal and start [apache] and [mysql] .
+---
 
-3. Download project from github (https://github.com/sreenandha24/Student-Result-Management-System-sqlproject.git) (or) follow gitbash commands
+## 🛠️ Technologies Used
 
-    `i>cd C:\\xampp\htdocs\`
+- 💾 SQL (MySQL / Oracle)
+- 🧠 SQL Queries: DDL, DML, Joins, Group By, Aggregate Functions
+- 💻 Optional: VS Code + SQLTools (for query execution)
 
-   ` ii>https://github.com/sangram9019/sql_project.git`
+---
 
-4. Open the Link http://localhost/phpmyadmin (or) http://127.0.0.1/phpmyadmin in any Web Browser on your Computer
+## 📁 Project Structure
 
-5. Click on the 'New' button in the left-side Navigation Bar.
+- `create_database.sql` – Create database and tables
+- `insert_data.sql` – Insert sample student, course, and marks data
+- `queries.sql` – Practice useful SELECT queries and reports
 
-6. Give the Database a Name (Eg: Student_mgmt_systm) and Set Collation to 'utf8_general_ci'
+---
 
-7. Hit the Create Button. Now the Database is Created Successfully
+## 📂 Tables Overview
 
-8. After Creating the Database Click on the Import Tab.
+1. `Students(student_id, name, department)`
+2. `Courses(course_id, course_name, max_marks)`
+3. `Results(result_id, student_id, course_id, marks_obtained)`
 
-9. Browse the File srm.sql in the Directory -  [Student-Result-Management-System-sqlproject/srm.sql](srm.sql).
+All relationships are maintained using **foreign keys**.
 
-10.  Upload the [srm.sql](srm.sql) file and click on Import
+---
 
-11.  Now Click on the SQL tab and run the queries 
+## ✅ Features
 
->Note: This Project can also be run on any other SQL Managment Tools such as Amazon RDBMS, Oracle SQLServer, Microsoft SQLServer etc... But we prefer doing it on PHPMYADMIN as it is easier to use and has a good GUI when compared to other command line clients
+- Add and view student records
+- Add course details
+- Insert marks for students
+- Generate result reports
+- Show student-wise or course-wise performance
+- Calculate average marks, total marks, and highest scorers
 
-Having Trouble Installing XAMPP? Check out the Demo Video 👉[Click Here](https://youtu.be/-f8N4FEQWyY)
+---
 
+## 🧪 Sample Queries Included
 
+```sql
+-- List all students with their marks
+SELECT s.name, c.course_name, r.marks_obtained
+FROM Students s
+JOIN Results r ON s.student_id = r.student_id
+JOIN Courses c ON r.course_id = c.course_id;
 
+-- Total and average marks of each student
+SELECT s.name, SUM(r.marks_obtained) AS total_marks, AVG(r.marks_obtained) AS average
+FROM Students s
+JOIN Results r ON s.student_id = r.student_id
+GROUP BY s.name;
 
-## Entity Relationship (ER) Diagram:
-![image](https://github.com/sreenandha24/Student-Result-Management-System-sqlproject/blob/main/ER%20DIAGRAM.png)
-
-
-
+-- Highest scorer in each course
+SELECT c.course_name, s.name AS topper, r.marks_obtained
+FROM Results r
+JOIN Students s ON r.student_id = s.student_id
+JOIN Courses c ON r.course_id = c.course_id
+WHERE (r.course_id, r.marks_obtained) IN (
+    SELECT course_id, MAX(marks_obtained) FROM Results GROUP BY course_id
+);
