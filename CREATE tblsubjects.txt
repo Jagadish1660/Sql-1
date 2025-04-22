@@ -1,0 +1,23 @@
+-- Table structure for table `tblsubjects`
+--
+
+CREATE TABLE `tblsubjects` (
+  `id` int(11) NOT NULL,
+  `SubjectName` varchar(100) NOT NULL,
+  `SubjectCode` varchar(100) NOT NULL,
+  `Creationdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblsubjects`
+--
+
+INSERT INTO `tblsubjects` (`id`, `SubjectName`, `SubjectCode`, `Creationdate`, `UpdationDate`) VALUES
+(1, 'Maths', 'MTH01', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(2, 'English', 'ENG11', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(4, 'Science', 'SC1', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(5, 'Music', 'MS', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(6, 'Social Studies', 'SS08', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(7, 'Physics', 'PH03', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(8, 'Chemistry', 'CH65', '2018-10-23 17:21:20', '2018-10-23 17:21:20');

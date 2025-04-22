@@ -1,0 +1,17 @@
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `UserName` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `updationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2018-10-23 18:10:50'),
+(2, 'saxenapriyansh', '5e5693106f98422d9e1fa019202c1890', '2018-10-23 18:07:00');

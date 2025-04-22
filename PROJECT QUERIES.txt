@@ -1,0 +1,59 @@
+1.What is the marks of Abhishek Choudhary? /other students (provided name and class)
+SQL> SELECT S.StudentId,S.StudentName,D.SubjectName,R.marks FROM tblstudents S INNER JOIN tblsubjects D INNER JOIN tblresult R ON S.StudentName =  ‘Abhishek Choudhary’ AND R.SubjectId = D.id AND R.ClassId = 1;
+
+2. Write a Query to Display all the Entries in the Classes with B Section
+SQL> SELECT * FROM tblclasses WHERE section = 'B';
+
+3.What is the average mark/percentage of Abhishek Choudhary? other students (provided name and class)
+SQL> SELECT S.StudentId,S.StudentName,D.SubjectName,AVG(R.marks) FROM tblstudents S INNER JOIN tblsubjects D INNER JOIN tblresult R ON S.StudentName = 'Abhishek Choudhary' AND R.SubjectId = D.id AND R.ClassId = 1;
+
+4. Write a Query to Show all Subjects in Class 1 which is created on 29-08-2017
+SQL> SELECT * FROM tblsubjectcombination WHERE classid = '1' AND creationdate = '2017-08-27';
+
+5.What is the Lowest mark of Abhishek Choudhary? other students (provided name and class)
+SQL> SELECT S.StudentId,S.StudentName,D.SubjectName,MIN(R.marks) AS marks FROM tblstudents S INNER JOIN tblsubjects D INNER JOIN tblresult R ON S.StudentName = 'Abhishek Choudhary' AND R.SubjectId = D.id AND R.ClassId = 1;
+
+6.What is the Highest mark of Abhishek Choudhary? other students (provided name and class)
+SQL> SELECT S.StudentId,S.StudentName,D.SubjectName,MAX(R.marks) AS marks FROM tblstudents S INNER JOIN tblsubjects D INNER JOIN tblresult R ON S.StudentName = 'Abhishek Choudhary' AND R.SubjectId = D.id AND R.ClassId = 1;
+
+7. Write a Query to Display all the Entries in the tblresult table
+SQL> SELECT * FROM tblresult;
+
+8. Write a Query to Show all Subjects in Class 2 along with the subject name and subject code
+SQL> SELECT subjectname, subjectcode FROM tblsubjects SB, tblsubjectcombination SBC WHERE SBC.subjectid = SB.id AND SBC.classid = '2'; 
+
+9. Write a Query to Display all the Entries in the tblstudents table
+SQL> SELECT * FROM tblstudents;
+
+10. Write a query to show the student id and marks of students who scored above 75 for exams held on 2017-08-24
+SQL> SELECT studentid, marks FROM tblresult WHERE marks >= '75' AND  postingdate = '2017-08-24';
+
+11. Write a Query to Display all the Entries in the tblsubjectcombination table
+SQL> SELECT * FROM tblsubjectcombination;
+
+12. Write a Query to Display the details of a the male students in class 2
+SQL> SELECT ALL FROM tblstudents where Classid = 2 AND gender = 'MALE';
+
+13. Write a Query to Display all the Entries in the tblsubjects table
+SQL> SELECT * FROM tblsubjects;
+
+14. Write a query to display a possible subject combinations in class 8
+SQL> SELECT Subjecid, Status FROM tblsubjectcombination WHERE class = '8' AND status = '1'
+
+15. Write a Query to display all Subject along with their subject code and updation date;
+SQL> SELECT SubjectName, SubjectCode, UpdationDate FROM tblsubjects;
+
+16. Write a Query to display all the details of the Classes that were updated on 2018-10-23
+SQL> SELECT * FROM tblclasses WHERE UpdationDate = '2018-10-23';
+
+17. Write a Query to Display the details of the results where there were no updaions
+SQL> SELECT * FROM tblresult WHERE UpdationDate IS NULL;
+
+18. Write a Query to display the details of the female students
+SQL> SELECT ALL FROM tblstudents where gender = 'FEMALE';
+
+19. Write a  Query to display the details of all the subject combinations that has status 0
+SQL> SELECT * FROM tblsubjectcombination WHERE status = '0';
+
+20. Write a Query to display the SUbject with code 'MS'
+SQL> SELECT * FROM tblsubjects WHERE SubjectCode = 'MS';

@@ -1,0 +1,26 @@
+-- Table structure for table `tblclasses`
+--
+
+CREATE TABLE `tblclasses` (
+  `id` int(11) NOT NULL,
+  `ClassName` varchar(80) DEFAULT NULL,
+  `ClassNameNumeric` int(4) NOT NULL,
+  `Section` varchar(5) NOT NULL,
+  `CreationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdationDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblclasses`
+--
+
+INSERT INTO `tblclasses` (`id`, `ClassName`, `ClassNameNumeric`, `Section`, `CreationDate`, `UpdationDate`) VALUES
+(1, 'First', 1, 'C', '2018-10-23 17:21:20', '2018-10-23 18:51:56'),
+(2, 'Second', 2, 'A', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(4, 'Fourth', 4, 'C', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(5, 'Sixth', 6, 'A', '2018-10-23 17:21:20', '2018-10-23 18:52:27'),
+(6, 'Sixth', 6, 'B', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(7, 'Seventh', 7, 'B', '2018-10-23 17:21:20', '2018-10-23 17:21:20'),
+(8, 'Eight', 8, 'A', '2018-10-23 17:21:20', '2018-10-23 17:21:20');
+
+-- --------------------------------------------------------

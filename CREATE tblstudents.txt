@@ -1,0 +1,28 @@
+-- Table structure for table `tblstudents`
+--
+
+CREATE TABLE `tblstudents` (
+  `StudentId` int(11) NOT NULL,
+  `StudentName` varchar(100) NOT NULL,
+  `RollId` varchar(100) NOT NULL,
+  `StudentEmail` varchar(100) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `DOB` varchar(100) NOT NULL,
+  `ClassId` int(11) NOT NULL,
+  `RegDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `Status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblstudents`
+--
+
+INSERT INTO `tblstudents` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Gender`, `DOB`, `ClassId`, `RegDate`, `UpdationDate`, `Status`) VALUES
+(1, 'Abhishek Choudhary', '46456', 'abhishek.cho472@gmail.com', 'Male', '1997-07-09', 1, '2018-10-12 10:30:57', '2018-10-23 18:44:37', 1),
+(2, 'Akshat Maheshwari', '10861', 'aks3d76@gmail.com', 'Male', '1997-06-11', 4, '2018-10-19 18:42:28', '2018-10-23 18:46:16', 0),
+(3, 'Mohit Kumar', '2626', 'humar.mohit570@gmail.com', 'Male', '2014-08-06', 6, '2018-10-19 18:42:28', '2018-10-23 18:48:34', 1),
+(4, 'Divyanshu Tripathi', '990', 'hidivyanshu@gmail.com', 'Male', '1997-02-03', 7, '2018-10-19 18:42:28', '2018-10-23 18:47:54', 1),
+(5, 'Deepankar Singh', '122', 'singhdeepankar111@gmail.com', 'Male', '1997-02-03', 8, '2018-10-19 18:42:28', '2018-10-23 18:47:21', 1);
+
+-- --------------------------------------------------------

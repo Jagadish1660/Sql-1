@@ -1,0 +1,36 @@
+-- Table structure for table `tblresult`
+--
+
+CREATE TABLE `tblresult` (
+  `id` int(11) NOT NULL,
+  `StudentId` int(11) DEFAULT NULL,
+  `ClassId` int(11) DEFAULT NULL,
+  `SubjectId` int(11) DEFAULT NULL,
+  `marks` int(11) DEFAULT NULL,
+  `PostingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblresult`
+--
+
+INSERT INTO `tblresult` (`id`, `StudentId`, `ClassId`, `SubjectId`, `marks`, `PostingDate`, `UpdationDate`) VALUES
+(2, 1, 1, 2, 100, '2017-08-24 17:54:09', '2017-08-28 18:34:32'),
+(3, 1, 1, 1, 80, '2017-08-24 17:54:09', '2017-08-28 18:34:25'),
+(4, 1, 1, 5, 78, '2017-08-24 17:54:09', '2017-08-28 18:34:26'),
+(5, 1, 1, 4, 60, '2017-08-24 17:54:09', '2017-08-28 18:34:26'),
+(6, 2, 4, 2, 90, '2017-08-28 18:38:18', NULL),
+(7, 2, 4, 1, 75, '2017-08-28 18:38:18', NULL),
+(8, 2, 4, 5, 56, '2017-08-28 18:38:18', '2017-08-28 19:26:42'),
+(9, 2, 4, 4, 80, '2017-08-28 18:38:18', '2017-08-28 19:26:42'),
+(10, 4, 7, 2, 54, '2017-08-28 18:56:21', '2017-08-28 19:03:10'),
+(11, 4, 7, 1, 85, '2017-08-28 18:56:21', NULL),
+(12, 4, 7, 5, 55, '2017-08-28 18:56:21', '2017-08-28 19:03:10'),
+(13, 4, 7, 7, 65, '2017-08-28 18:56:21', '2017-08-28 19:03:10'),
+(14, 5, 8, 2, 75, '2017-08-28 19:25:07', NULL),
+(15, 5, 8, 1, 56, '2017-08-28 19:25:07', NULL),
+(16, 5, 8, 5, 52, '2017-08-28 19:25:07', NULL),
+(17, 5, 8, 4, 80, '2017-08-28 19:25:07', NULL);
+
+-- --------------------------------------------------------
